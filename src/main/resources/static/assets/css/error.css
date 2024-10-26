@@ -1,0 +1,86 @@
+/* General styling for message box */
+.starter1-section {
+  position: relative;
+  padding: 20px;
+}
+
+/* Message container centered for desktop and mobile */
+.message-container {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px; /* Adjust maximum width as per your design */
+  text-align: center;
+  padding: 10px;
+  z-index: 999; /* Ensure the message stays on top */
+}
+
+/* Contact section layout */
+.contact1-section {
+  margin-top: 60px; /* Adjust to provide space for the message */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Responsive layout for different screen sizes */
+
+/* For desktop and larger screens */
+@media (min-width: 1024px) {
+  .starter1-section {
+    padding: 40px;
+  }
+
+  .message-container {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px; /* Adjust as per desktop size */
+  }
+
+  .contact1-section {
+    margin-top: 80px; /* More space for larger screens */
+  }
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+  .starter1-section {
+    padding: 30px;
+  }
+
+  .message-container {
+    position: absolute; /* Keep the message container positioned absolutely */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Ensure it's centered */
+    width: 90%; /* Reduce width for better mobile fit */
+    text-align: center; /* Center text content */
+  }
+
+  .contact1-section {
+    margin-top: 70px; /* Slightly increase space for the contact section */
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .starter1-section {
+    padding: 20px;
+  }
+
+  .message-container {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Ensure it remains centered */
+    width: 95%; /* Max width for mobile */
+    text-align: center; /* Ensure text is centered */
+  }
+
+  .contact1-section {
+    margin-top: 70px; /* Ensure enough space for the message container */
+  }
+}

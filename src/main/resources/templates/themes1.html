@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Scope India</title>
+    <!-- Favicons -->
+           <link th:href="@{/Images/s.png}" rel="shortcut icon">
+    
+<style th:fragment="header">
+
+/* General layout for the header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* position:fixed; */
+}
+
+/* Hide the logo in the middle for mobile view */
+.logohide {
+    display: block;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+/* Media queries for mobile view */
+@media (max-width: 768px) {
+    /* Left and right menus should be spaced out on mobile */
+    .navmenu-left ul, .navmenu-right ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    /* Center logo should be hidden on mobile */
+    .logohide {
+        display: none;
+    }
+
+    /* Mobile logo should be visible */
+    .mobile-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Align the mobile nav toggle to the right */
+    .mobile-nav-toggle {
+        margin-left: auto;
+    }
+
+    /* Ensure the header aligns items properly */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+</style>
+</head>
+<body>
+ <header id="header" class="header d-flex align-items-center fixed-top" th:fragment="header" style="background-color:rgba(20, 46, 108, 0.9);">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      
+      <!-- Left-side menu -->
+      <nav id="navmenu-left" class="navmenu">
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        
+      
+      <li class="logohide">
+      <!-- Logo in the center -->
+      <a href="index" class="logo d-flex align-items-center">
+        <img src="Images/scope-india-logo-bird.png" alt="homeimg" class="homeimg">
+      </a>
+      </li>
+      <!-- Right-side menu -->
+    
+        
+          <li><a href="course">Courses</a></li>
+          <li><a href="logout"> Logout</a></li>
+          <li><a href="registration" class="btn-register">Register Now</a></li>
+        </ul>
+     
+       <a href="index" class="logo d-flex align-items-center mobile-logo">
+        <img src="Images/scope-india-logo-bird.png" alt="homeimg" class="homeimg">
+      </a>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+  
+    </div>
+  </header>
+</body>
+</html>

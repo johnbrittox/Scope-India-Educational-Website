@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<title>Scope India</title>
+    <!-- Favicons -->
+           <link th:href="@{/Images/s.png}" rel="shortcut icon">
+    <link th:href="@{assets/css/send-otp.css}" rel="stylesheet"></head>
+</head>
+<body>
+    <section class="starter1-section">
+        <div class="login-box">
+            <header>OTP Verification</header>
+            
+            <!-- OTP Verification form -->
+            <form th:action="@{/verify-otp}" method="post" class="form1">
+                <!-- Hidden field for email -->
+                <input type="hidden" th:value="${email}" name="email" />
+                
+                <!-- OTP input -->
+                <div class="input1-box">
+                    <label for="otp">Enter OTP:</label>
+                    <input type="text" name="OTP" placeholder="Enter OTP" required />
+                </div>
+    
+                <!-- Verify Button -->
+                <button type="submit">Verify OTP</button>
+
+                <!-- Error message (if any) -->
+                <p th:if="${error}" th:text="${error}" style="color:red;"></p>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

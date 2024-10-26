@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #34495e;
+} */
+.sectionn{
+/* 	    background-color: #e2edf7;
+ */	
+}
+
+/* Dashboard container layout */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    
+    
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 20%; /* 20% for the left side */
+   /* background-color: #142e6c;  Dark Blue */
+    padding: 40px 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #559bcc; /* Button color */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #41799f; /* Darker blue hover effect */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Main content styling */
+.main-content {
+    width: 80%; /* 80% for the right side */
+    padding: 60px;
+    background-color: #e2edf7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #1c2b48; /* Dark Blue */
+    text-align: center;
+}
+
+/* User info section styling */
+.user-info {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.user-info p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #34495e;
+}
+
+.user-info strong {
+    color: #1c2b48; /* Dark Blue */
+}
+
+/* Adding a little extra spacing for small screens */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .user-info {
+        padding: 20px;
+    }
+}

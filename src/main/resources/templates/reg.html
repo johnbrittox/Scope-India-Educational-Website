@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Favicons -->
+    <link th:href="@{assets/img/favicon.png}" rel="icon">
+    <link th:href="@{assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Vendor CSS Files -->
+    <link th:href="@{assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/aos/aos.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    
+    <link th:href="@{assets/css/main.css}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="regsection">
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      
+      <!-- Left-side menu -->
+      <nav id="navmenu-left" class="navmenu">
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        
+      
+      <li class="logohide">
+      <!-- Logo in the center -->
+      <a href="index" class="logo d-flex align-items-center">
+        <img src="Images/scope-india-logo-bird.png" alt="homeimg" class="homeimg">
+      </a>
+      </li>
+      <!-- Right-side menu -->
+    
+        
+          <li><a href="dashboard">Dashboard</a></li>
+          <li><a href="login"> Login</a></li>
+          <li><a href="registration" class="btn-register">Register Now</a></li>
+        </ul>
+        <a href="index" class="logo d-flex align-items-center mobile-logo">
+        <img src="Images/scope-india-logo-bird.png" alt="homeimg" class="homeimg">
+      </a>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+  
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    
+        <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
+          <div class="container position-relative">
+            <p>Registration</p>
+            <h1>It's just a matter of 80 days to an IT job!
+            </h1>
+            <nav class="breadcrumbs">
+              <ol>
+                <li><a href="index">Home</a></li>
+                <li class="current">Registration</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+         <section class="starter-section">
+        <div class="registration-section">
+            <div class="left-box" style="background-image: url(assets/img/page-title-bg.jpg);">
+                <header>It's just a matter of 80 days to an IT job!</header>
+            </div>
+
+            <div class="right-box">
+                <header>Registration Form</header>
+                <form th:action="@{/send}" id="registrationForm" method="post" th:object="${register}" enctype="multipart/form-data">
+                    <!-- First Name -->
+                    <div class="input-box">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" th:field="*{firstName}" placeholder="Enter first name" required />
+                            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </span>
+                    
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="input-box">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" th:field="*{lastName}" placeholder="Enter last name" required />
+                        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> </span>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="input-box">
+                        <label for="gender">Gender</label>
+                        <div class="select-box">
+                            <select id="gender" name="gender" required>
+                      <option hidden>Select gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                        </div>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="input-box">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" th:field="*{dateOfBirth}" required />
+                                                <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"> </span>
+                        
+                    </div>
+
+                    <!-- Email -->
+                    <div class="input-box">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" th:field="*{email}" placeholder="Enter email address" required />
+                            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> </span>
+                        
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="input-box">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" th:field="*{phoneNumber}" placeholder="Enter phone number" required />
+                                <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"> </span>
+                   
+                    </div>
+
+                    <!-- Country -->
+                    <div class="input-box">
+                        <label for="country">Country</label>
+                        <div class="select-box">
+                            <select id="country" name="country" th:field="*{country}" required>
+                            <option value="0"> --Select--</option>
+                            <option th:each="country:${countries}" th:text="${country.countryname}" th:value="${country.countryid}">
+                              
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- State -->
+                    <div class="input-box">
+                        <label for="state">State</label>
+                        <div class="select-box">
+                            <select id="state" name="state" th:field="*{state}" required>
+                                 <option value="0"> --Select--</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- City -->
+                    <div class="input-box">
+                        <label for="city">City</label>
+                        <div class="select-box">
+                            <select id="city" name="city" th:field="*{city}" required>
+                                <option value="0"> --Select--</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies -->
+                    <div class="input-box">
+                        <label>Hobbies</label>
+                        <div class="hobbies-box">
+                            <label><input type="checkbox" name="hobbies" value="reading" th:field="*{hobbies}"/> Reading</label>
+                            <label><input type="checkbox" name="hobbies" value="sport" th:field="*{hobbies}"/> Sports</label>
+                            <label><input type="checkbox" name="hobbies" value="traveling" th:field="*{hobbies}"/> Traveling</label>
+                            <label><input type="checkbox" name="hobbies" value="gaming" th:field="*{hobbies}"/> Gaming</label>
+                        </div>
+                    </div>
+                    
+                     <!-- Upload Avatar -->
+               <!--  <div class="input-box">
+                  <label for="avatar">Upload Avatar</label>
+                  <input type="file" id="avatar" th:field="*{fileupload}" name="avatar" accept="image/*" required />
+                </div> -->
+         <div class="input-box">
+                  <label for="avatar">Upload Avatar</label>
+                  <input type="file" id="avatar" name="avatar" accept="image/*" required />
+                </div> 
+                    <!-- Submit Button -->
+                    <div class="input-box">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+      <!-- Footer -->
+   <footer id="Footer" class="clearfix">
+  <div class="widgets_wrapper" style="padding:50px ">
+      <div class="container">
+          <div class="column one">
+              <aside class="widget_text widget widget_custom_html">
+                  <div class="textwidget custom-html-widget">
+                      <div style="text-align:center">
+                          <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                              <div class="image_wrapper">
+                                  <img class="scale-with-grid" src="https://scopeindia.org/images/snowpark-footer-logo.png">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12 footer-locations">
+                                  Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu
+                              </div>
+                          </div>
+                          <div class="foot1"></div>
+                          <img class="scale-with-grid iso-logo" alt="An ISO 9001:2015, IAS &amp; IFS Certified Company" 
+                               title="An ISO 9001:2015, IAS &amp; IAF Certified Company" 
+                               src="https://scopeindia.org/images/iso_iaflogo.png">
+                          <p class="iso-text">An ISO 9001:2015 Certified Company</p>
+                          <p class="copyright-text">
+                              All Rights Reserved 
+                              <a class="footer_links" target="_blank" href="https://www.suffixesolutions.com/" 
+                                 title="A trusted IT Partner"> 
+                                  Suffix E Solutions 
+                              </a>&copy; 2007-2024
+                          </p>
+                          <div class="row contact-info">
+                              <div class="col-md-12">
+                                  <a class="footer_links" href="tel:+919745936073">9745936073 (TPK)</a> &nbsp;&nbsp; 
+                                  <a class="footer_links" href="tel:+919745936073">9745936073 (TVM)</a> &nbsp;&nbsp; 
+                                  <a class="footer_links" href="tel:+917592939481">7592939481 (EKM)</a> &nbsp;&nbsp;
+                                  <a class="footer_links" href="tel:+918075536185">8075536185 (NGL)</a> &nbsp;&nbsp; 
+                                  <a class="footer_links" target="_blank" href="mailto:info@scopeindia.org" 
+                                     style="outline: none;">info@scopeindia.org</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </aside>
+          </div>
+      </div>
+  </div>
+</footer>
+  </main>
+
+     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+      <!-- Preloader -->
+      <div id="preloader"></div>
+
+    <script>
+     		$(document).ready(function(){
+     			$('#country').change(function(){
+     				var countryid=$(this).val();
+     				$.ajax({
+     					url:'/state/'+countryid,
+     					type:'GET',
+     					success:function(data){
+     						var stat=$("#state")
+     						stat.empty();
+     						stat.append('<option value="0"> --Select state--</option>')
+     						$.each(data,function(index,state){
+     							stat.append('<option value="'+state.stateid+'">'+state.statename+'</option>');
+     						})
+     					}
+     				})
+     			})
+     		})
+     </script>
+ <script>
+     		$(document).ready(function(){
+     			$('#state').change(function(){
+     				var stateid=$(this).val();
+     				$.ajax({
+     					url:'/city/'+stateid,
+     					type:'GET',
+     					success:function(data){
+     						var stat=$("#city")
+     						stat.empty();
+     						stat.append('<option value="0"> --Select City--</option>');
+     						$.each(data,function(index,city){
+     							stat.append('<option value="'+city.cityid+'">'+city.cityname+'</option>');
+     						})
+     					}
+     				})
+     			})
+     		})
+     </script>
+      
+    
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    
+      <!-- Main JS File -->
+      <script src="assets/js/main.js"></script>
+    
+    
+
+</body>
+</html>
+    

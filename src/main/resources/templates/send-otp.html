@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<title>Scope India</title>
+    <!-- Favicons -->
+           <link th:href="@{/Images/s.png}" rel="shortcut icon">
+    <link th:href="@{assets/css/send-otp.css}" rel="stylesheet"></head>
+<body>
+    <section class="starter1-section">
+        <div class="login-box">
+            <header>Generate Otp</header>
+            <!-- Error message (if any) -->
+            <h5 style="color:red;" th:text="${error}"></h5>
+            
+            <!-- Form to generate temporary password -->
+            <form th:action="@{/generate-temp-password}" th:object="${register}" method="post" class="form1">
+                <!-- Email input -->
+                <div class="input1-box">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" th:field="*{email}" placeholder="Enter your email" required />
+                </div>
+    
+                <!-- Submit button -->
+                <button type="submit">Get OTP</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensure responsiveness -->
+<title>Scope India</title>
+    <!-- Favicons -->
+           <link th:href="@{/Images/s.png}" rel="shortcut icon">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background for better contrast */
+        }
+        .card {
+            border: none;
+            border-radius: 8px; /* Rounded corners */
+        }
+        .card-header {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            text-align: center;
+            border-radius: 8px 8px 0 0; /* Rounded top corners */
+        }
+        .form-group label {
+            font-weight: bold; /* Bold labels for better readability */
+        }
+        .btn-primary {
+            width: 100%; /* Full-width button */
+            background-color: #007bff; /* Ensure primary color */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6"> <!-- Adapt to different screen sizes -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h2>Edit Details</h2>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/editprofile}" th:object="${student}" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="firstName"> Firstname:</label>
+                                <input type="text" id="firstName" class="form-control" th:field="*{firstName}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName"> Lastname:</label>
+                                <input type="text" id="lastName" class="form-control" th:field="*{lastName}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="number"> Number:</label>
+                                <input type="text" id="number" class="form-control" th:field="*{phoneNumber}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob"> Date Of Birth:</label>
+                                <input type="text" id="dob" class="form-control" th:field="*{dateOfBirth}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hobbies">Hobbies:</label>
+                                <input type="text" id="dob" class="form-control" th:field="*{hobbies}" required>
+                            </div>
+                             <select th:field="*{country}">
+    <option value="0">--Select Country--</option>
+    <option th:each="country : ${countries}" 
+            th:value="${country.countryid}" 
+            th:text="${country.countryname}">
+    </option>
+</select>
+
+<select th:field="*{state}">
+    <option value="0">--Select State--</option>
+    <option th:each="state : ${states}" 
+            th:value="${state.stateid}" 
+            th:text="${state.statename}">
+    </option>
+</select>
+
+<select th:field="*{city}">
+    <option value="0">--Select City--</option>
+    <option th:each="city : ${cities}" 
+            th:value="${city.cityid}" 
+            th:text="${city.cityname}">
+    </option>
+</select>
+
+                            
+    <!-- Image Preview and Upload -->
+    <div class="form-group">
+        <label for="fileupload">Update Profile Image</label>
+        <div class="text-center">
+            <img th:src="@{'/Images/' + ${student.fileupload}}" alt="Current Avatar" class="avatar" id="profileImagePreview"/>
+        </div>
+        <input type="file" id="fileupload" name="fileupload" accept="image/*" onchange="previewImage(event)" class="form-control-file">
+    </div>
+
+    <!-- Submit Button -->
+
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div> 
+                </div>
+            </div> 
+        </div>
+    </div>
+<!--     Image preview-->
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('profileImagePreview');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

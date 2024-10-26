@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope India</title>
+    <!-- Favicons -->
+           <link th:href="@{/Images/s.png}" rel="shortcut icon">
+    
+    
+<style>
+  /* New container styling */
+  .about-container {
+    background-color: rgb(226, 237, 247);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  /* New card styling */
+  .info-card {
+  background-color: #f0f0f0; /* Or one of the colors above */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+
+  /* Hover effect for cards */
+  .info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue shade on hover */
+  }
+
+  /* Title styling */
+  .info-card-title {
+    color: #228B22; /* Dark green color for the numbers */
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold; /* Explicit bold styling */
+  }
+
+  /* Subtitle styling */
+  .info-card-subtitle {
+    color: #333; /* Dark grey color for subtitles */
+    font-size: 18px;
+    font-weight: bold; /* Explicit bold styling */
+  }
+
+  /* Responsive margin for card columns */
+  .responsive-spacing .col-12 {
+    margin-bottom: 20px;
+  }
+
+  /* Equal height for columns */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col-12, .col-sm-6, .col-md-4 {
+    display: flex;
+  }
+
+  .col-md-4 .info-card {
+    flex: 1;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .info-card {
+      padding: 15px;
+      border-radius: 8px;
+      min-height: 200px; /* Adjust the minimum height for smaller screens */
+    }
+
+    .info-card-title {
+      font-size: 32px;
+    }
+
+    .info-card-subtitle {
+      font-size: 16px;
+    }
+  }
+</style>
+    
+   
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Vendor CSS Files -->
+    <link th:href="@{assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/aos/aos.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    
+    <link th:href="@{assets/css/main.css}" rel="stylesheet">
+
+</head>
+
+<body class="regsection">
+
+    <div th:replace="~{themes::header}"></div>
+  
+
+  <main class="main">
+
+    <!-- Page Title -->
+    
+        <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
+          <div class="container position-relative">
+            <p>About</p>
+            <h1>It's just a matter of 80 days to an IT job!
+            </h1>
+            <nav class="breadcrumbs">
+              <ol>
+                <li><a href="index">Home</a></li>
+                <li class="current">About</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+  <div class="section mcb-section dark bg-cover"
+     style="padding-bottom:150px; background-color:rgb(226, 237, 247);
+     background-repeat:no-repeat; background-position:center bottom;">
+
+      
+      <section id="features" class="features section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h1 class="abouthead">SCOPE INDIA, your career partner!</h1>
+          <h2>One of India's best Training destinations for Software, Networking, and Cloud Computing courses with 17 years of Industrial experience.</h2>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-4 align-items-center features-item">
+            <h4>
+            Software, Networking, and Cloud Professional Education Centre in Kerala and Tamil Nadu from Suffix E Solutions with WORKING PROFESSIONALS oriented on-the-job TRAINING model. SCOPE INDIA provides courses for Software Programming in Python (Data Science | Artificial Intelligence | Machine Learning | Deep Learning, Data Analytics), Java, PHP, .Net, MERN,Software Testing Manual and Automation, Cloud Computing (AWS | Azure), Server Administration (MicroSoft MCSE | Linux RHCE), Networking (CCNA), DevOps, Mobile App Development in Flutter, and Digital Marketing. A Training with a 100% Trusted Job-Based Internship Model. SCOPE INDIA has a Strong Placement Cell that provides jobs to thousands of students annually. We assure you, you won't regret it after training from SCOPE INDIA!          </h4>
+         
+            <h5>
+                This is how SCOPE INDIA can support both newbies and those experienced in the industry to upgrade their skills.
+
+
+            </h5>
+          </div>
+        </div>
+        
+        <div class="text-center mb-4 steps-img" data-aos="zoom-out">
+<!--           <a class="footer_links" href="https://g.page/r/CXbW6SZGeJPfEAE" target="_blank"><img th:src="@{Images/5star.png}" class="star5"></a>
+ -->        
+ <a class="footer_links" href="https://g.page/r/CXbW6SZGeJPfEAE" target="_blank">
+  <img th:src="@{Images/5star.png}" class="star5" alt="5 Star Rating">
+</a>
+ 
+   <p class="text-center">Google 4.9 * Rated Institute</p>
+        </div>
+
+      </section>
+
+           <section id="cardss" class="cards sectionn">
+
+
+<div class="about-container">
+  <div class="row responsive-spacing">
+    
+    <!-- First card -->
+    <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="info-card">
+        <h4 class="info-card-title count-up" data-count="1000">0</h4>
+        <h5 class="info-card-subtitle">STUDENTS ARE<br>TRAINED EVERY YEAR</h5>
+      </div>
+    </div>
+
+    <!-- Second card -->
+    <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="info-card">
+        <h4 class="info-card-title count-up" data-count="30">0</h4>
+        <h5 class="info-card-subtitle">COMPUTER COURSES</h5>
+      </div>
+    </div>
+
+    <!-- Third card -->
+    <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="info-card">
+        <h4 class="info-card-title count-up" data-count="95">0</h4>
+        <h5 class="info-card-subtitle">STUDENTS ARE GETTING PLACED EVERY YEAR</h5>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+</section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="Footer" class="clearfix">
+  <div class="widgets_wrapper" style="padding:50px ">
+      <div class="container">
+          <div class="column one">
+              <aside class="widget_text widget widget_custom_html">
+                  <div class="textwidget custom-html-widget">
+                      <div style="text-align:center">
+                          <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                              <div class="image_wrapper">
+                                  <img class="scale-with-grid" src="https://scopeindia.org/images/snowpark-footer-logo.png">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12 footer-locations">
+                                  Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu
+                              </div>
+                          </div>
+                          <div class="foot1"></div>
+                          <img class="scale-with-grid iso-logo" alt="An ISO 9001:2015, IAS &amp; IFS Certified Company" 
+                               title="An ISO 9001:2015, IAS &amp; IAF Certified Company" 
+                               src="https://scopeindia.org/images/iso_iaflogo.png">
+                          <p class="iso-text">An ISO 9001:2015 Certified Company</p>
+                          <p class="copyright-text">
+                              All Rights Reserved 
+                              <a class="footer_links" target="_blank" href="https://www.suffixesolutions.com/" 
+                                 title="A trusted IT Partner"> 
+                                  Suffix E Solutions 
+                              </a>&copy; 2007-2024
+                          </p>
+                          <div class="row contact-info">
+                              <div class="col-md-12">
+                                  <a class="footer_links" href="tel:+919745936073">9745936073 (TPK)</a> &nbsp;&nbsp; 
+                                  <a class="footer_links" href="tel:+919745936073">9745936073 (TVM)</a> &nbsp;&nbsp; 
+                                  <a class="footer_links" href="tel:+917592939481">7592939481 (EKM)</a> &nbsp;&nbsp;
+                                  <a class="footer_links" href="tel:+918075536185">8075536185 (NGL)</a> &nbsp;&nbsp; 
+                                  <a class="footer_links" target="_blank" href="mailto:info@scopeindia.org" 
+                                     style="outline: none;">info@scopeindia.org</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </aside>
+          </div>
+      </div>
+  </div>
+</footer>
+  </main>
+
+     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+      <!-- Preloader -->
+      <div id="preloader"></div>
+    
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    
+      <!-- Main JS File -->
+      <script src="assets/js/main.js"></script>
+    
+    <script>
+  // Function to handle the count-up effect
+  function countUp(element) {
+    const target = +element.getAttribute('data-count');
+    const duration = 2000; // Duration for the animation
+    const increment = target / (duration / 50); // Number to increment per frame
+    let current = 0;
+  
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(interval);
+      }
+      element.textContent = Math.floor(current) + (target === 95 ? '%' : '+');
+    }, 50);
+  }
+
+  // Function to observe the cards and trigger the count-up animation when in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        countUp(entry.target);
+        observer.unobserve(entry.target); // Stop observing once the animation is triggered
+      }
+    });
+  });
+
+  // Apply observer to all count-up elements
+  document.querySelectorAll('.count-up').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>

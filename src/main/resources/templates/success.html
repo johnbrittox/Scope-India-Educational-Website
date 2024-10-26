@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Scope India</title>
+    <!-- Favicons -->
+           <link th:href="@{/Images/s.png}" rel="shortcut icon">
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    a {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Verification Success</h1>
+<br>
+<h2><a th:href="@{/generate-temp-password}">Click here to login</a></h2>
+</body>
+</html>

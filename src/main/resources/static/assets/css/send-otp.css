@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* Login form styles */
+
+.login-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background: #f4f8ff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+}
+
+.login-box header {
+  font-size: 1.8rem;
+  color: #3c579b;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.form1 {
+  margin-top: 20px;
+}
+
+.input1-box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input1-box label {
+  font-size: 1rem;
+  color: #1e2a4a;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form1 input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #c3d1e5;
+  border-radius: 6px;
+  color: #1e2a4a;
+}
+
+.input1-box input:focus {
+  border-color: #3c579b;
+  box-shadow: 0 0 5px #7294d4;
+}
+
+.form1 button {
+  height: 55px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background: #3c579b;
+  border-radius: 6px;
+}
+
+.form1 button:hover {
+  background: #7294d4;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .login-box {
+    width: 100%;
+    padding: 20px;
+  }
+}
